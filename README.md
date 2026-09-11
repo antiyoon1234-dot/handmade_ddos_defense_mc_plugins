@@ -100,3 +100,9 @@ JUnit으로 토큰 버킷, 동시 요청, 로그인 상한/만료, 공유 IP 분
 - [Paper 서버 설정](https://docs.papermc.io/paper/reference/global-configuration/)
 - [Velocity 백엔드 보안](https://docs.papermc.io/velocity/security/)
 - [ProtocolLib 5.3.0](https://github.com/dmulloy2/ProtocolLib/releases/tag/5.3.0)
+
+## 라이선스
+
+Copyright (C) 2026 antiyoon1234-dot. 이 프로젝트는 **GPL-3.0-only**로 배포합니다. 전체 조건은 [LICENSE](LICENSE), 저작권 및 외부 의존성 안내는 [NOTICE](NOTICE)를 확인하세요. 배포 JAR의 `META-INF/`에도 두 파일이 포함됩니다.
+
+사용·수정·상업적 이용이 가능합니다. 원본이나 수정본을 재배포할 때는 GPLv3 조건에 따라 라이선스와 해당 버전의 빌드에 필요한 소스를 제공해야 합니다. 비공개 저장소 주소만 전달해서는 소스 제공을 대신할 수 없습니다. 서버에서 실행하는 것만으로 소스 공개 의무가 생기지는 않습니다. 소프트웨어는 무보증으로 제공됩니다.

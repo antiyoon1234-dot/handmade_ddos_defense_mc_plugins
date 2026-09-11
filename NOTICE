@@ -1,0 +1,18 @@
+DDoSGuard
+Copyright (C) 2026 antiyoon1234-dot
+SPDX-License-Identifier: GPL-3.0-only
+
+This project is licensed under version 3 of the GNU General Public License.
+See LICENSE for the complete terms. This software is provided without warranty.
+
+Corresponding source and build instructions:
+https://github.com/antiyoon1234-dot/mc-ddos-def-plu
+When distributing binaries, provide the corresponding source under the GPLv3
+terms; a private repository URL alone does not give recipients source access.
+
+Paper API and ProtocolLib are external provided dependencies, not bundled in
+this JAR. Their original copyrights and licenses remain with their authors.
+ProtocolLib 5.3.0 source declares GPL version 2 or any later version:
+https://github.com/dmulloy2/ProtocolLib/blob/5.3.0/src/main/java/com/comphenix/protocol/ProtocolLibrary.java
+Paper licensing:
+https://github.com/PaperMC/Paper/blob/main/LICENSE.md

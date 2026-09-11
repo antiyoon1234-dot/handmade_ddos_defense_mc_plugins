@@ -1,1 +1,1 @@
-078e3e95ede90cbb89d7cae62b20ac61bc1c5dd3d633e70b0b7d66f90ff3c136  DDoSGuard-1.0.0.jar
+8f82c043ff6c637208a8d406e1b8e597ca64631bde5913cbea98f9787ea95bfc  DDoSGuard-1.0.0.jar

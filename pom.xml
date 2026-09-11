@@ -3,6 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>local.ddosguard</groupId><artifactId>ddosguard</artifactId><version>1.0.0</version>
   <name>DDoSGuard</name><description>Paper 1.20.x admission and request protection with kick-only enforcement.</description>
+  <licenses><license><name>GNU General Public License v3.0 only</name><url>https://www.gnu.org/licenses/gpl-3.0.html</url><distribution>repo</distribution></license></licenses>
   <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></properties>
   <repositories>
     <repository><id>papermc</id><url>https://repo.papermc.io/repository/maven-public/</url></repository>
@@ -15,6 +16,7 @@
     <dependency><groupId>com.github.seeseemelk</groupId><artifactId>MockBukkit-v1.20</artifactId><version>3.9.0</version><scope>test</scope></dependency>
   </dependencies>
   <build>
+    <resources><resource><directory>src/main/resources</directory></resource><resource><directory>${project.basedir}</directory><targetPath>META-INF</targetPath><includes><include>LICENSE</include><include>NOTICE</include></includes></resource></resources>
     <finalName>DDoSGuard-1.0.0</finalName>
     <plugins>
       <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
