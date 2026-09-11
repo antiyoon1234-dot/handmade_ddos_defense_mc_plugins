@@ -1,0 +1,69 @@
+# Paper 1.20.x / Java 17 바이트코드. 1.20.5~1.20.6 서버 실행에는 Java 21이 필요합니다.
+# enforce: 초과 요청 제한 및 반복 위반 추방 / observe: 통계만 기록 / off: 검사 중지
+mode: enforce
+
+# Paper의 SPAM / TOO_MANY_PENDING_CHATS 추방도 같은 안내로 표시합니다.
+# enforce 모드에서만 적용하며 인증 오류, 수동 추방, 다른 플러그인 추방은 변경하지 않습니다.
+native-spam-kick-message: true
+
+# 이 플러그인의 모든 접속 거절/추방에서 사용하는 공통 문구입니다.
+kick-message: |-
+  서버 보호를 위해 연결이 일시적으로 종료되었습니다.
+  잠시 후 다시 접속해 주세요.
+  정상 이용 중 문제가 반복된다면 디스코드에서 문의 티켓을 열어주세요.
+
+# 같은 IP의 유저를 묶어 제한하지 않습니다. 서버 전체 처리 용량 기준입니다.
+# 아래 수치는 초기 설정값이며 실제 하드웨어/모드/동접 환경에 맞춰 관찰 후 조정하세요.
+login:
+  enabled: true
+  per-second: 20
+  burst: 80
+  protected-per-second: 10
+  # 다음 두 항목은 ProtocolLib가 활성화된 초기 로그인 추적에만 적용됩니다.
+  max-pending: 256
+  pending-timeout-seconds: 30
+
+# ProtocolLib 5.3.0 이상이 있으면 로그인 START 및 PLAY 패킷 단계에서도 검사합니다.
+# 없으면 Paper 이벤트만 보호하며, 서버 콘솔/status에 제한된 범위를 표시합니다.
+protocol:
+  enabled: true
+
+# 순간적인 패킷 몰림 한 번으로 추방하지 않습니다.
+# 최초 초과 후 아래 시간이 지나고, 기간 내 초과 횟수도 충족해야 추방합니다.
+violations:
+  window-seconds: 10
+  minimum-span-seconds: 3
+  kick-after: 30
+
+limits:
+  command: {enabled: true, per-second: 12, burst: 40}
+  tab-complete: {enabled: true, per-second: 20, burst: 60}
+  chat: {enabled: true, per-second: 5, burst: 20}
+  book-edit: {enabled: true, per-second: 1, burst: 8}
+  inventory-click: {enabled: true, per-second: 40, burst: 120}
+  item-drop: {enabled: true, per-second: 20, burst: 80}
+  custom-payload: {enabled: true, per-second: 100, burst: 500}
+  # 전체 PLAY 패킷은 중간에 임의로 버리지 않고 지속 초과 시에만 추방합니다.
+  # 이동·KeepAlive·채팅 서명 처리가 부분적으로 깨지는 것을 피하기 위한 정책입니다.
+  all-packets: {enabled: true, per-second: 600, burst: 2400}
+
+# 공개 서버 목록 핑은 로그인과 별도 예산을 사용합니다. 초과 핑에는 응답하지 않습니다.
+# 서버 목록 핑 연결에는 마인크래프트 로그인 추방 문구를 표시할 수 없습니다.
+status-ping:
+  enabled: true
+  per-second: 100
+  burst: 300
+
+# 보호 상태는 신규 로그인 처리량만 조절합니다. 기존 유저 제한을 일괄 강화하지 않습니다.
+adaptive:
+  enabled: true
+  login-attempts-per-second: 100
+  rejected-logins-per-second: 20
+  request-violations-per-second: 200
+  consecutive-seconds: 3
+  minimum-protection-seconds: 30
+  recovery-seconds: 15
+
+diagnostics:
+  summary-seconds: 60
+  recent-kicks: 100

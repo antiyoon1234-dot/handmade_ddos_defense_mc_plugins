@@ -1,0 +1,16 @@
+name: DDoSGuard
+version: 1.0.0
+main: local.ddosguard.DDoSGuardPlugin
+api-version: '1.20'
+description: 접속 및 요청 과부하 보호. 밴 없이 추방만 사용합니다.
+softdepend: [ProtocolLib]
+commands:
+  ddosguard:
+    description: DDoSGuard 상태 및 설정 관리
+    aliases: [dg]
+    usage: /ddosguard <status|reload|mode|recent>
+    permission: ddosguard.admin
+permissions:
+  ddosguard.admin:
+    description: 방어 상태 확인 및 설정 변경
+    default: op
